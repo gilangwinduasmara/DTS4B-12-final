@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { Route, Router, Routes } from 'react-router-dom';
+import { Navigate, Route, Router, Routes } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import BrowsePage from './pages/BrowsePage';
 import RegisterPage from './pages/RegisterPage';
@@ -11,6 +11,7 @@ function App() {
   return (
     <>
       <Routes>
+        <Route path="/" element={<Navigate to={'/login'}/>} />
         <Route path="/login" element={
           <ProtectedRoute loginOnly={false}>
             <LoginPage />
